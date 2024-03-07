@@ -1,463 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>ADYNAMICS</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+<head>
+  <meta charset="utf-8" />
+  <title>ADYNAMICS</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon" />
 
-    <!-- Icon Font Stylesheet -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css2/style.css">
-  
-   
-    <style>
-     
-     hr {
-            border: none;
-            border-top: 2px solid black; /* Change the color and thickness as needed */
-            margin: 20px 0; /* Adjust spacing */
-        }
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css2/style.css">
 
 
-     #scard {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Adjust height as needed */
-    /* background-image: url('https://media.istockphoto.com/id/486037941/photo/canada-flag.jpg?s=1024x1024&w=is&k=20&c=ftOCzZMot-MWyk8s_DI2s3JYjVwMpuGDq1BFjY8blL4='); Replace 'your-image-url.jpg' with the URL of your image */
-    background-size: cover;
-    background-position: center;
-    border: 1px solid #ccc;
-    overflow: hidden; /* Ensure overflow is hidden to prevent content overflow */
-}
-
-#scard::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Initial opacity, 0.5 means 50% opacity */
-    transition: opacity 0.3s ease; /* Smooth transition */
-}
-
-#scard:hover::before {
-    opacity: 1; /* Opacity becomes 1 on hover */
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-#stext {
-    position: relative;
-}
-
-#stext p {
-    transition: transform 0.3s ease;
-}
-
-#scard:hover #stext p {
-    transform: scale(1.2); /* Increase scale for the pop-out effect */
-}
-
-#grid1 {
-  display: grid;
-  grid-template-rows: 1fr 1fr; /* Two columns of equal width */
-  grid-gap: 10px; /* Gap between columns */
-}
+  <style>
+    hr {
+      border: none;
+      border-top: 2px solid black;
+      /* Change the color and thickness as needed */
+      margin: 20px 0;
+      /* Adjust spacing */
+    }
 
 
+    #scard {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      /* Adjust height as needed */
+      /* background-image: url('https://media.istockphoto.com/id/486037941/photo/canada-flag.jpg?s=1024x1024&w=is&k=20&c=ftOCzZMot-MWyk8s_DI2s3JYjVwMpuGDq1BFjY8blL4='); Replace 'your-image-url.jpg' with the URL of your image */
+      background-size: cover;
+      background-position: center;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      /* Ensure overflow is hidden to prevent content overflow */
+    }
 
-    </style>
-  </head>
+    #scard::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      /* Initial opacity, 0.5 means 50% opacity */
+      transition: opacity 0.3s ease;
+      /* Smooth transition */
+    }
 
-  <body>
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark text-light p-0">
-      <div class="row gx-0 d-none d-lg-flex">
-          <div class="col-lg-7 px-5 text-start">
-              <div class="h-100 d-inline-flex align-items-center me-4">
-                  <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                  <small>Bengaluru, Karanataka, India</small>
-              </div>
-              <div class="h-100 d-inline-flex align-items-center">
-                  <small class="far fa-clock text-primary me-2"></small>
-                  <small>himanshu@adynamics.in </small>
-              </div>
-          </div>
-          <div class="col-lg-5 px-5 text-end">
-              <div class="h-100 d-inline-flex align-items-center me-4">
-                  <small class="fa fa-phone-alt text-primary me-2"></small>
-                  <small>+91-8296076136</small>
-              </div>
-              <div class="h-100 d-inline-flex align-items-center mx-n2" >
-                  <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f" style="font-size: 20px; color: #fff;"></i></a>
-                  <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter" style="font-size: 20px;"></i></a>
-                  <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"style="font-size: 20px; color:#fff"></i></a>
-                  <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
-              </div>
-          </div>
+    #scard:hover::before {
+      opacity: 1;
+      /* Opacity becomes 1 on hover */
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    #stext {
+      position: relative;
+    }
+
+    #stext p {
+      transition: transform 0.3s ease;
+    }
+
+    #scard:hover #stext p {
+      transform: scale(1.2);
+      /* Increase scale for the pop-out effect */
+    }
+
+    #grid1 {
+      display: grid;
+      /* grid-template-rows: 1fr 1fr; */
+      /* Two columns of equal width */
+      grid-gap: 10px;
+      /* Gap between columns */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+  </div>
+  <!-- Spinner End -->
+  <!-- Topbar Start -->
+  <div class="container-fluid bg-dark text-light p-0">
+    <div class="row gx-0 d-none d-lg-flex">
+      <div class="col-lg-7 px-5 text-start">
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="fa fa-map-marker-alt text-primary me-2"></small>
+          <small>Bengaluru, Karanataka, India</small>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center">
+          <small class="far fa-clock text-primary me-2"></small>
+          <small>himanshu@adynamics.in </small>
+        </div>
       </div>
+      <div class="col-lg-5 px-5 text-end">
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <small class="fa fa-phone-alt text-primary me-2"></small>
+          <small>+91-8296076136</small>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center mx-n2">
+          <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
+              class="fab fa-facebook-f" style="font-size: 20px; color: #fff;"></i></a>
+          <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
+              class="fab fa-twitter" style="font-size: 20px;"></i></a>
+          <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
+              class="fab fa-linkedin-in" style="font-size: 20px; color:#fff"></i></a>
+          <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- Topbar End -->
 
 
   <!-- Navbar Start -->
   <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-    <a
-    href="index.html"
-    class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-  >
-    <img src="./img/adynamicsLogo.png" width="180px" height="auto" alt="" />
-  </a>
-      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+      <img src="./img/adynamicsLogo.png" width="180px" height="auto" alt="" />
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto p-4 p-lg-0">
-          
-         
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-              <a href="jj.html" class="nav-item nav-link active">Home</a>
-              <a href="testComponents/about-hero.html" class="nav-item nav-link ">About</a>
-              <a href="testComponents/cource-aboutpage.html" class="nav-item nav-link">Flying</a>
-              <a href="testComponents/clasess.html" class="nav-item nav-link  ">Classes</a>
-              <a href="blog/homepageblog.html" class="nav-item nav-link">blog</a>
-            </div>
-            <a
-              style="background-color: #49aaaa;height: auto; font-size: 1em;"
-              href=""
-              class="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
-              >ENQUIRY<i class="fa fa-arrow-right ms-3"></i
-            ></a>
+            <a href="jj.html" class="nav-item nav-link active">Home</a>
+            <a href="testComponents/about-hero.html" class="nav-item nav-link ">About</a>
+            <a href="testComponents/cource-aboutpage.html" class="nav-item nav-link">Flying</a>
+            <a href="testComponents/clasess.html" class="nav-item nav-link  ">Classes</a>
+            <a href="blog/homepageblog.html" class="nav-item nav-link">blog</a>
           </div>
+          <a style="background-color: #49aaaa;height: auto; font-size: 1em;" href=""
+            class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">ENQUIRY<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
   </nav>
 
 
 
-      <!-- 
+  <!-- 
         - #HERO
       -->
 
-      <section class="section hero" id="home" aria-label="hero" >
-        <div class="container" style="margin-top: -7%;">
+  <section class="section hero" id="home" aria-label="hero">
+    <div class="container" style="margin-top: -7%;">
 
-          <div class="hero-content">
+      <div class="hero-content">
 
-            <p class="hero-subtitle has-before" >Wellcome to ADynamics</p>
+        <p class="hero-subtitle has-before">Wellcome to ADynamics</p>
 
-            <h1 class="h1 hero-title" ">Ready to Awaken the Aviator in You?</h1>
+        <h1 class="h1 hero-title" ">Ready to Awaken the Aviator in You?</h1>
 
-            <p class="hero-text">
-              Elevate your pilot journey with ADynamics – where a comprehensive curriculum, experienced instructors, and global partnerships converge. From in-depth training to seamless career support, we're your catalyst for aviation success.
-            </p>
+            <p class=" hero-text">
+          Elevate your pilot journey with ADynamics – where a comprehensive curriculum, experienced instructors, and
+          global partnerships converge. From in-depth training to seamless career support, we're your catalyst for
+          aviation success.
+          </p>
 
-            <div class="btn-group">
-              <a href="#" class="btn btn-primary" style="border-end-end-radius: 50px; background-color: #49aaaa;" >Discover More</a>
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary" style="border-end-end-radius: 50px; background-color: #49aaaa;">Discover
+              More</a>
 
-              <button class="flex-btn" >
-                <div class="btn-icon" style="background-color: #49aaaa;" >
-                  <ion-icon name="play" aria-hidden="true" ></ion-icon>
-                </div>
+            <button class="flex-btn">
+              <div class="btn-icon" style="background-color: #49aaaa;">
+                <ion-icon name="play" aria-hidden="true"></ion-icon>
+              </div>
 
-                <span class="span" style="color: #49aaaa;">Demo Class</span>
-              </button>
-            </div>
-
+              <span class="span" style="color: #49aaaa;">Demo Class</span>
+            </button>
           </div>
 
-         <figure class="has-before hero-banner" style="--width: 650; --height: 650; margin-left: 40px;">
-          <img src="./img/hero-banner.png" width="400px" height="800px" alt="hero banner" class="img-cover  " style="border-radius: 50%; width: 100%; ">
-         </figure>
-           
-          
+      </div>
 
+      <figure class="has-before hero-banner" style="--width: 650; --height: 650; margin-left: 40px;">
+        <img src="./img/hero-banner.png" width="400px" height="800px" alt="hero banner" class="img-cover  "
+          style="border-radius: 50%; width: 100%; ">
+      </figure>
+
+
+
+    </div>
+  </section>
+
+  <!-- Hero-section End -->
+
+  <!-- Facts Start -->
+  <div class="container-fluid d-none d-xl-block facts py-4 pt-lg-4">
+    <div class="container py-5 pt-lg-0">
+      <div class="row gx-2 gy-2">
+        <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+          <div class="bg-white arc-shadow d-flex align-items-center h-100 p-4 border-r8" style="min-height: 150px">
+            <div class="d-flex">
+              <div class="flex-shrink-0 btn-lg-square bg-primary border-r10">
+                <i class="fa fa-plane text-white"></i>
+              </div>
+              <div class="ps-4">
+                <h5>In-Depth Ground Training</h5>
+                <span>Embark on a journey of mastery, gaining precise coaching to ace DGCA ground tests.
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-
-    <!-- Hero-section End -->
-
-    <!-- Facts Start -->
-    <div class="container-fluid d-none d-xl-block facts py-4 pt-lg-4">
-      <div class="container py-5 pt-lg-0">
-        <div class="row gx-2 gy-2">
-          <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-            <div
-              class="bg-white arc-shadow d-flex align-items-center h-100 p-4 border-r8"
-              style="min-height: 150px"
-            >
-              <div class="d-flex">
-                <div class="flex-shrink-0 btn-lg-square bg-primary border-r10">
-                  <i class="fa fa-plane text-white"></i>
-                </div>
-                <div class="ps-4">
-                  <h5>In-Depth Ground Training</h5>
-                  <span
-                    >Embark on a journey of mastery, gaining precise coaching to ace DGCA ground tests.
-                    </span
-                  >
-                </div>
+        <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+          <div class="bg-white arc-shadow d-flex align-items-center h-100 p-4 border-r8" style="min-height: 150px">
+            <div class="d-flex">
+              <div class="flex-shrink-0 btn-lg-square bg-primary border-r10">
+                <i class="fa fa-users text-white"></i>
+              </div>
+              <div class="ps-4">
+                <h5>Elite Instructors, Expert Pilots</h5>
+                <span>Experience training led by seasoned pilots, ensuring excellence in preparation for your aviation
+                  career journey.</span>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-            <div
-              class="bg-white arc-shadow d-flex align-items-center h-100 p-4 border-r8"
-              style="min-height: 150px"
-            >
-              <div class="d-flex">
-                <div class="flex-shrink-0 btn-lg-square bg-primary border-r10">
-                  <i class="fa fa-users text-white"></i>
-                </div>
-                <div class="ps-4">
-                  <h5>Elite Instructors, Expert Pilots</h5>
-                  <span
-                    >Experience training led by seasoned pilots, ensuring excellence in preparation for your aviation career journey.</span
-                  >
-                </div>
+        </div>
+        <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+          <div class="bg-white arc-shadow d-flex align-items-center h-100 p-4 border-r8" style="min-height: 150px">
+            <div class="d-flex">
+              <div class="flex-shrink-0 btn-lg-square bg-primary border-r10">
+                <i class="fa fa-file-alt text-white"></i>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-            <div
-              class="bg-white arc-shadow d-flex align-items-center h-100 p-4 border-r8"
-              style="min-height: 150px"
-            >
-              <div class="d-flex">
-                <div class="flex-shrink-0 btn-lg-square bg-primary border-r10">
-                  <i class="fa fa-file-alt text-white"></i>
-                </div>
-                <div class="ps-4">
-                  <h5>License Conversion Support</h5>
-                  <span
-                    >Receive expert guidance for smooth DGCA CPL conversion. We're with you from training to job landing.</span
-                  >
-                </div>
+              <div class="ps-4">
+                <h5>License Conversion Support</h5>
+                <span>Receive expert guidance for smooth DGCA CPL conversion. We're with you from training to job
+                  landing.</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Facts End -->
-<!-- timilime starts -->
-    <section class="timeline_area section_padding_130">
-      <div class="container">
-          <div class=" row justify-content-center">
-              <div class="col-12 col-sm-8 col-lg-6">
-                  <!-- Section Heading-->
-                  <div class="section_heading text-center">
-                    <h6 class="text-primary text-uppercase mb-2" >Trending Courses</h6>
-                      <h1 class="display-6 mb-4"  ">
+  </div>
+  <!-- Facts End -->
+  <!-- timilime starts -->
+  <section class="timeline_area section_padding_130">
+    <div class="container">
+      <div class=" row justify-content-center">
+        <div class="col-12 col-sm-8 col-lg-6">
+          <!-- Section Heading-->
+          <div class="section_heading text-center">
+            <h6 class="text-primary text-uppercase mb-2">Trending Courses</h6>
+            <h1 class="display-6 mb-4" ">
                         Aviator RoadMap & Global Flight Training Hubs
                       </h1>
-                      <div class="line"></div>
-                  </div>
-              </div>
+                      <div class=" line">
           </div>
-          <div class="row">
+        </div>
+      </div>
+    </div>
+    <div class="row">
 
 
-              <div class="col-12 col-lg-6">
-                  <!-- Timeline Area-->
-                  <div class="apland-timeline-area">
-                      <!-- Single Timeline Content-->
-                      <div class="single-timeline-area">
-                          <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                              <p>LEVEL 1</p>
-                          </div>
-                          <div class="row">
-                              <div class="col-12 col-md-10 col-lg-12">
-                                  <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                      
-                                      <div class="timeline-text">
-                                          <h6>Ground Training</h6>
-                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                              
-                            
-                          </div>
-                      </div>
-                      <!-- Single Timeline Content-->
-                      <div class="single-timeline-area">
-                          <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                              <p>LEVEL2</p>
-                          </div>
-                          <div class="row">
-                              <div class="col-12 col-md-10 col-lg-12">
-                                  <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                      
-                                      <div class="timeline-text">
-                                          <h6>Commercial Pilot License Training</h6>
-                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-12 col-md-6 col-lg-4">
-                                  
-                              </div>
-                          </div>
-                      </div>
-                      <!-- Single Timeline Content-->
-                      <div class="single-timeline-area">
-                          <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                              <p>LEVEL 3</p>
-                          </div>
-                          <div class="row">
-                              <div class="col-12 col-md-10 col-lg-12">
-                                  <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                     
-                                      <div class="timeline-text">
-                                          <h6>Cpl Conversion</h6>
-                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                            
-                              <div class="col-12 col-md-6 col-lg-4">
-                                 
-                              </div>
-                          </div>
-                      </div>
-                      <div class="single-timeline-area">
-                        <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                            <p>LEVEL 4</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-10 col-lg-12">
-                                <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                   
-                                    <div class="timeline-text">
-                                        <h6>Type Rating</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                            <div class="col-12 col-md-6 col-lg-4">
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-timeline-area">
-                      <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                          <p>LEVEL 5</p>
-                      </div>
-                      <div class="row">
-                          <div class="col-12 col-md-10 col-lg-12">
-                              <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                 
-                                  <div class="timeline-text">
-                                      <h6>Airline Prep</h6>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                  </div>
-                              </div>
-                          </div>
-                        
-                          <div class="col-12 col-md-6 col-lg-4">
-                             
-                          </div>
-                      </div>
+      <div class="col-12 col-lg-6">
+        <!-- Timeline Area-->
+        <div class="apland-timeline-area">
+          <!-- Single Timeline Content-->
+          <div class="single-timeline-area">
+            <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s"
+              style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+              <p>LEVEL 1</p>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-10 col-lg-12">
+                <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s"
+                  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+
+                  <div class="timeline-text">
+                    <h6>Ground Training</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                   </div>
-                  </div>
+                </div>
               </div>
 
-              <div class="col-12 col-lg-6" id="grid1">
-                
-                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                    <div class="col col-12 " style="padding-bottom: 3vh;" ><h4 style="text-align: center;">CPL Training </h4><hr></div>
-                    <div class="carousel-inner" style="width: 46vw; height: 70vh; overflow-y: scroll;">
-                      <div class="car">
-                        <div class="containerr">
-                 
-                          
-                            
-                             
-                             
-                            
-                            <ul class="responsive-table">
-                           
-                            <li class="table-row article-card1 ti" style="border-radius: 10%;">
-                              <div class="col col-12 " id="scard" data-label="Job Id" style="padding:-10%;height: 18vh;background-image: url(https://media.istockphoto.com/id/486037941/photo/canada-flag.jpg?s=1024x1024&w=is&k=20&c=ftOCzZMot-MWyk8s_DI2s3JYjVwMpuGDq1BFjY8blL4=);" >  <div class="content" id="stext" style="float: right; margin-right: 80px;">
-                                
-                                <h5 class="mb-3 mt-2 mt-xl-1" >Canada</h5>
-                                <p class="datee">Jan 1, 2022</p>
-                              </div></div>
-                             
-                            </li>
-                            <li class="table-row article-card2 ti">
-                              <div class="col col-12 "id="scard" data-label="Job Id" style= "padding: -10%;background-image: url(https://media.istockphoto.com/id/1089926546/photo/new-zealand-and-australia-two-flags-together-realations-textile-cloth-fabric-texture.jpg?s=1024x1024&w=is&k=20&c=he0NRAKNR3IlawY1e3OKR5DEkyHGYBChCivv7igNdbY=);height: 18vh;" >  <div class="content"id="stext" style="float: left; margin-left: 80px;">
-                                
-                                <h5 class="mb-3 mt-2 mt-xl-1" style="font-weight: 900;z-index: 1;" >New Zealand</h5>
-                                <p class="datee">Jan 1, 2022</p>
-                              </div></div>
-                             
-                            </li>
-                            <li class="table-row">
-                              <div class="col col-12 "id="scard" data-label="Job Id" style= "padding: -10%;background-image: url(https://media.istockphoto.com/id/530709339/photo/flag-of-india.jpg?s=612x612&w=0&k=20&c=aZJ8_uV__Xj6GJVPBbWmcvg6S8YRDZ7r0tQ5otQAugo=);height: 18vh;" >  <div class="content" id="stext" style="float: right; margin-right: 80px;">
-                                
-                                <h5 class="mb-3 mt-2 mt-xl-1" style="z-index: 1;">India</h5>
-                                <p class="datee">Jan 1, 2022</p>
-                              </div></div>
-                             
-                            </li>
 
-                            <li class="table-row article-card1 ti">
-                              <div class="col col-12 "id="scard" data-label="Job Id" style="padding:-10%;height: 18vh;background-image: url(https://media.istockphoto.com/id/486037941/photo/canada-flag.jpg?s=1024x1024&w=is&k=20&c=ftOCzZMot-MWyk8s_DI2s3JYjVwMpuGDq1BFjY8blL4=);" >  <div class="content" id="stext" style="float: right; margin-right: 80px;">
-                                
-                                <h5 class="mb-3 mt-2 mt-xl-1"style="z-index: 1;">Canada</h5>
-                                <p class="datee">Jan 1, 2022</p>
-                              </div></div>
-                             
-                            </li>
-                            <li class="table-row article-card2 ti">
-                              <div class="col col-12 "id="scard" data-label="Job Id" style= "padding: -10%;background-image: url(https://media.istockphoto.com/id/1089926546/photo/new-zealand-and-australia-two-flags-together-realations-textile-cloth-fabric-texture.jpg?s=1024x1024&w=is&k=20&c=he0NRAKNR3IlawY1e3OKR5DEkyHGYBChCivv7igNdbY=);height: 18vh;" >  <div class="content" id="stext" style="float: left; margin-left: 80px;">
-                                
-                                <h5 class="mb-3 mt-2 mt-xl-1" style="font-weight: 900; z-index: 1;" >New Zealand</h5>
-                                <p class="datee">Jan 1, 2022</p>
-                              </div></div>
-                             
-                            </li>
-                           
+            </div>
+          </div>
+          <!-- Single Timeline Content-->
+          <div class="single-timeline-area">
+            <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s"
+              style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+              <p>LEVEL2</p>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-10 col-lg-12">
+                <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s"
+                  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+
+                  <div class="timeline-text">
+                    <h6>Commercial Pilot License Training</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+
+              </div>
+            </div>
+          </div>
+          <!-- Single Timeline Content-->
+          <div class="single-timeline-area">
+            <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s"
+              style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+              <p>LEVEL 3</p>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-10 col-lg-12">
+                <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s"
+                  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+
+                  <div class="timeline-text">
+                    <h6>Cpl Conversion</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4">
+
+              </div>
+            </div>
+          </div>
+          <div class="single-timeline-area">
+            <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s"
+              style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+              <p>LEVEL 4</p>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-10 col-lg-12">
+                <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s"
+                  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+
+                  <div class="timeline-text">
+                    <h6>Type Rating</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4">
+
+              </div>
+            </div>
+          </div>
+          <div class="single-timeline-area">
+            <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s"
+              style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+              <p>LEVEL 5</p>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-10 col-lg-12">
+                <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s"
+                  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+
+                  <div class="timeline-text">
+                    <h6>Airline Prep</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6" id="grid1">
+
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          <div class="col col-12 " style="padding-bottom: 1rem; padding-left: 2rem;">
+            <h4 style="text-align: center;">CPL Training </h4>
+            <hr>
+          </div>
+          <div class="carousel-inner" style="width: 100%; height: 45%; overflow-y: scroll;">
+            <div class="car">
+              <div class="containerr">
+
+
+
+
+
+
+                <ul class="responsive-table">
+
+                  <li class="table-row article-card1 ti" style="border-radius: 10%;">
+                    <div class="col col-12 " id="scard" data-label="Job Id"
+                      style="padding:-10%;border-radius: 15px;height: 20%;background-image: url(https://media.istockphoto.com/id/486037941/photo/canada-flag.jpg?s=1024x1024&w=is&k=20&c=ftOCzZMot-MWyk8s_DI2s3JYjVwMpuGDq1BFjY8blL4=);">
+                      <div class="content" id="stext" style="float: right; margin-right: 80px;">
+
+                        <h5 class="mb-3 mt-2 mt-xl-1">Canada</h5>
+                        <p class="datee">Jan 1, 2022</p>
+                      </div>
+                    </div>
+
+                  </li>
+                  <li class="table-row article-card2 ti">
+                    <div class="col col-12 " id="scard" data-label="Job Id"
+                      style="padding: -10%;border-radius: 15px;background-image: url(https://media.istockphoto.com/id/1089926546/photo/new-zealand-and-australia-two-flags-together-realations-textile-cloth-fabric-texture.jpg?s=1024x1024&w=is&k=20&c=he0NRAKNR3IlawY1e3OKR5DEkyHGYBChCivv7igNdbY=);height: 20%;">
+                      <div class="content" id="stext" style="float: left; margin-left: 80px;">
+
+                        <h5 class="mb-3 mt-2 mt-xl-1" style="font-weight: 900;z-index: 1;">New Zealand</h5>
+                        <p class="datee">Jan 1, 2022</p>
+                      </div>
+                    </div>
+
+                  </li>
+                  <li class="table-row">
+                    <div class="col col-12 " id="scard" data-label="Job Id"
+                      style="padding: -10%;border-radius: 15px;background-image: url(https://media.istockphoto.com/id/530709339/photo/flag-of-india.jpg?s=612x612&w=0&k=20&c=aZJ8_uV__Xj6GJVPBbWmcvg6S8YRDZ7r0tQ5otQAugo=);height: 20%;">
+                      <div class="content" id="stext" style="float: right; margin-right: 80px;">
+
+                        <h5 class="mb-3 mt-2 mt-xl-1" style="z-index: 1;">India</h5>
+                        <p class="datee">Jan 1, 2022</p>
+                      </div>
+                    </div>
+
+                  </li>
+
+                  <li class="table-row article-card1 ti">
+                    <div class="col col-12 " id="scard" data-label="Job Id"
+                      style="padding:-10%;border-radius: 15px;height: 20%;background-image: url(https://media.istockphoto.com/id/486037941/photo/canada-flag.jpg?s=1024x1024&w=is&k=20&c=ftOCzZMot-MWyk8s_DI2s3JYjVwMpuGDq1BFjY8blL4=);">
+                      <div class="content" id="stext" style="float: right; margin-right: 80px;">
+
+                        <h5 class="mb-3 mt-2 mt-xl-1" style="z-index: 1;">Canada</h5>
+                        <p class="datee">Jan 1, 2022</p>
+                      </div>
+                    </div>
+
+                  </li>
+                  <li class="table-row article-card2 ti">
+                    <div class="col col-12 " id="scard" data-label="Job Id"
+                      style="padding: -10%;border-radius: 15px;background-image: url(https://media.istockphoto.com/id/1089926546/photo/new-zealand-and-australia-two-flags-together-realations-textile-cloth-fabric-texture.jpg?s=1024x1024&w=is&k=20&c=he0NRAKNR3IlawY1e3OKR5DEkyHGYBChCivv7igNdbY=);height: 20%;">
+                      <div class="content" id="stext" style="float: left; margin-left: 80px;">
+
+                        <h5 class="mb-3 mt-2 mt-xl-1" style="font-weight: 900; z-index: 1;">New Zealand</h5>
+                        <p class="datee">Jan 1, 2022</p>
+                      </div>
+                    </div>
+
+                  </li>
+
                 </ul>
               </div>
             </div>
@@ -479,8 +491,8 @@
                     </div>
               
                   </li> -->
-                <!-- TYPE RATING CLASSES -->
-                <!-- <div class="table-row article-card1 ti col" 
+            <!-- TYPE RATING CLASSES -->
+            <!-- <div class="table-row article-card1 ti col" 
                   style="background: linear-gradient(to left, #e7fff8, #e2e2e2); border-radius: 8px; margin: 20px; height: 115px;">
                   <div
                     style="background: linear-gradient(to left, #06939d, #85c6ff);height: 10px; border-top-left-radius: 8px;border-top-right-radius: 8px;">
@@ -501,9 +513,9 @@
                     </div>
                   </div>
                 </div> -->
-                <!-- TYPE RATING CLASSES ENDS -->
-              
-               <!-- </ul>
+            <!-- TYPE RATING CLASSES ENDS -->
+
+            <!-- </ul>
               </div>
             </div> -->
             <!-- TYPE WRITING ENDS-->
@@ -511,8 +523,8 @@
 
 
 
-          <!-- TEST CLASS 1 START-->
-          <!-- <div class="carousel-item" style="transition: transform 1s ease-in;">
+            <!-- TEST CLASS 1 START-->
+            <!-- <div class="carousel-item" style="transition: transform 1s ease-in;">
             <div class="containerr">
             
               <ul class="responsive-table">
@@ -528,9 +540,9 @@
                   </div>
             
                 </li>-->
-              <!-- TEST CLASS 1 CLASSES -->
-              <!-- Main Card Container -->
-              <!-- <div class="card-container">
+            <!-- TEST CLASS 1 CLASSES -->
+            <!-- Main Card Container -->
+            <!-- <div class="card-container">
                 <div class="grid-trial1-area">
                   <div class="Pretyperatingclass">PRE - TYPE RATING CLASS</div>
                   <div class="Typeratringcourse"> TYPE RATING COURSE</div>
@@ -539,7 +551,7 @@
                 </div>
               </div> -->
 
-              <!-- <div class="card-container">
+            <!-- <div class="card-container">
                 <div class="grid-trial1-area">
                   <div class="Pretyperatingclass"><div class="table-row article-card1 ti col" 
                     style="background: linear-gradient(to left, #e7fff8, #e2e2e2); border-radius: 8px; margin: 20px; height: 115px;">
@@ -626,16 +638,16 @@
                       </div>
                     </div>
                   </div></div> -->
-                <!--</div>
+            <!--</div>
               </div> -->
-              
 
-              <!-- TEST CLASS 1 CLASSES ENDS -->
-            
-              <!--</ul>
+
+            <!-- TEST CLASS 1 CLASSES ENDS -->
+
+            <!--</ul>
             </div>
           </div> -->
-          <!-- TEST CLASS 1 ENDS-->
+            <!-- TEST CLASS 1 ENDS-->
           </div>
         </div>
       </div>
@@ -643,503 +655,365 @@
 
     </div>
     </div>
-                             
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <!-- <div class="carousel-item">
+
+    </li>
+    </ul>
+    </div>
+    </div>
+    <!-- <div class="carousel-item">
                         <img src=...im" class="d-block w-100" alt="Image 2">
                       </div> -->
-                      <!-- Add more carousel items as needed -->
-                    </div>
-                  </div>
-                
-                
-              
-              </div>
-          </div>
-      </div>
+    <!-- Add more carousel items as needed -->
+    </div>
+    </div>
+
+
+
+    </div>
+    </div>
+    </div>
   </section>
-<!-- end time line -->
-    <!-- Courses Start -->
-    <div class="container-xxl my-4 my-xl-6 py-6 pb-0" style="background-color:#f0f2f4c3;>
-      <div class="container">
-        <div
-          class="text-center mx-auto mb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 600px;"
-        >
-          <h6 class="text-primary text-uppercase mb-2" >Trending Courses</h6>
-          <h1 class="display-6 mb-4"  ">
+  <!-- end time line -->
+  <!-- Courses Start -->
+  <div class="container-xxl my-4 my-xl-6 py-6 pb-0" style="background-color:#f0f2f4c3;>
+      <div class=" container">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+      <h6 class="text-primary text-uppercase mb-2">Trending Courses</h6>
+      <h1 class="display-6 mb-4" ">
             Embark on a transformative journey with our training program
           </h1>
         </div>
-        <div class="row g-4 justify-content-start" >
-          <div
-            class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div
-              class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100"
-            >
-              <div class="text-center p-4">
-                <h5 class="mb-3 mt-2 mt-xl-1">A320 Pre Type Rating Class</h5>
-                <p>
-                  Our program fully prepares aspiring pilots for A320 certification, providing essential knowledge and skills for success.  
-                </p>
-                <ol class="breadcrumb justify-content-center mb-0">
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-signal text-primary me-2"></i>Beginner
-                  </li>
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
-                  </li>
-                </ol>
-              </div>
-              <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
-                <img
-                  class="img-fluid border-r10"
-                  src="https://englishmithra.com/wp-content/uploads/2023/06/course1.jpg"
-                  alt=""
-                />
-                <div class="courses-overlay">
-                  <a
-                    class="btn btn-outline-primary border-2 courses-btn-bg"
-                    href="inidvidual-clases/pretyping.html"
-                    >Read More</a
-                  >
-                </div>
+        <div class=" row g-4 justify-content-start">
+        <div class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100">
+            <div class="text-center p-4">
+              <h5 class="mb-3 mt-2 mt-xl-1">A320 Pre Type Rating Class</h5>
+              <p>
+                Our program fully prepares aspiring pilots for A320 certification, providing essential knowledge and
+                skills for success.
+              </p>
+              <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-signal text-primary me-2"></i>Beginner
+                </li>
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
+                </li>
+              </ol>
+            </div>
+            <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
+              <img class="img-fluid border-r10" src="https://englishmithra.com/wp-content/uploads/2023/06/course1.jpg"
+                alt="" />
+              <div class="courses-overlay">
+                <a class="btn btn-outline-primary border-2 courses-btn-bg" href="inidvidual-clases/pretyping.html">Read
+                  More</a>
               </div>
             </div>
           </div>
-          <div
-            class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div
-              class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100"
-            >
-              <div class="text-center p-4">
-                <h5 class="mb-3 mt-2 mt-xl-1">
-                  DGCA cpl classes</h5>
-                <p>
-                  Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                  amet diam et eos
-                </p>
-                <ol class="breadcrumb justify-content-center mb-0">
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-signal text-primary me-2"></i>Beginner
-                  </li>
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
-                  </li>
-                </ol>
-              </div>
-              <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
-                <img
-                  class="img-fluid border-r10"
-                  src="https://englishmithra.com/wp-content/uploads/2023/06/advance-level.jpg"
-                  alt=""
-                />
-                <div class="courses-overlay">
-                  <a
-                    class="btn btn-outline-primary border-2 courses-btn-bg"
-                    href="./course-details.html"
-                    >Read More</a
-                  >
-                </div>
+        </div>
+        <div class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100">
+            <div class="text-center p-4">
+              <h5 class="mb-3 mt-2 mt-xl-1">
+                DGCA cpl classes</h5>
+              <p>
+                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
+                amet diam et eos
+              </p>
+              <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-signal text-primary me-2"></i>Beginner
+                </li>
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
+                </li>
+              </ol>
+            </div>
+            <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
+              <img class="img-fluid border-r10"
+                src="https://englishmithra.com/wp-content/uploads/2023/06/advance-level.jpg" alt="" />
+              <div class="courses-overlay">
+                <a class="btn btn-outline-primary border-2 courses-btn-bg" href="./course-details.html">Read More</a>
               </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div
-              class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100"
-            >
-              <div class="text-center p-4">
-                <h5 class="mb-3 mt-2 mt-xl-1">
-                  Radio Telephony (rtr) Class</h5>
-                <p>
-                  Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                  amet diam et eos
-                </p>
-                <ol class="breadcrumb justify-content-center mb-0">
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-signal text-primary me-2"></i>Beginner
-                  </li>
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
-                  </li>
-                </ol>
-              </div>
-              <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
-                <img
-                  class="img-fluid border-r10"
-                  src="https://englishmithra.com/wp-content/uploads/2023/06/kids-english.jpg"
-                  alt=""
-                />
-                <div class="courses-overlay">
-                  <a
-                    class="btn btn-outline-primary border-2 courses-btn-bg"
-                    href="./inidvidual-clases/RTR.html"
-                    >Read More</a
-                  >
-                </div>
+        <div class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100">
+            <div class="text-center p-4">
+              <h5 class="mb-3 mt-2 mt-xl-1">
+                Radio Telephony (rtr) Class</h5>
+              <p>
+                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
+                amet diam et eos
+              </p>
+              <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-signal text-primary me-2"></i>Beginner
+                </li>
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
+                </li>
+              </ol>
+            </div>
+            <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
+              <img class="img-fluid border-r10"
+                src="https://englishmithra.com/wp-content/uploads/2023/06/kids-english.jpg" alt="" />
+              <div class="courses-overlay">
+                <a class="btn btn-outline-primary border-2 courses-btn-bg" href="./inidvidual-clases/RTR.html">Read
+                  More</a>
               </div>
             </div>
           </div>
-          <div
-            class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div
-              class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100"
-            >
-              <div class="text-center p-4">
-                <h5 class="mb-3 mt-2 mt-xl-1">NIOS Prep
-                  Class</h5>
-                <p>
-                  Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                  amet diam et eos
-                </p>
-                <ol class="breadcrumb justify-content-center mb-0">
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-signal text-primary me-2"></i>Beginner
-                  </li>
-                  <li class="breadcrumb-item small">
-                    <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
-                  </li>
-                </ol>
+        </div>
+        <div class="col-xl-4 col-xxl-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="courses-item d-flex flex-column flex-xxl-row arc-shadow overflow-hidden h-100">
+            <div class="text-center p-4">
+              <h5 class="mb-3 mt-2 mt-xl-1">NIOS Prep
+                Class</h5>
+              <p>
+                Tempor erat elitr rebum at clita dolor diam ipsum sit diam
+                amet diam et eos
+              </p>
+              <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-signal text-primary me-2"></i>Beginner
+                </li>
+                <li class="breadcrumb-item small">
+                  <i class="fa fa-calendar-alt text-primary me-2"></i>3 Week
+                </li>
+              </ol>
+            </div>
+            <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
+              <img class="img-fluid border-r10"
+                src="https://englishmithra.com/wp-content/uploads/2023/06/moderate-1.jpg" alt="" />
+              <div class="courses-overlay">
+                <a class="btn btn-outline-primary border-2 courses-btn-bg"
+                  href="./inidvidual-clases/niosclasses.html">Read More</a>
               </div>
-              <div class="position-relative mt-auto p-4 pt-0 pt-lg-4">
-                <img
-                  class="img-fluid border-r10"
-                  src="https://englishmithra.com/wp-content/uploads/2023/06/moderate-1.jpg"
-                  alt=""
-                />
-                <div class="courses-overlay">
-                  <a
-                    class="btn btn-outline-primary border-2 courses-btn-bg"
-                    href="./inidvidual-clases/niosclasses.html"
-                    >Read More</a
-                  >
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  <!-- Courses End -->
+
+  <!-- Features Start -->
+
+  <section class="Features">
+    <div class="container-xxl py-6">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase mb-2">Why Choose Us!</h6>
+            <h1 class="display-6 mb-4">
+              Flight to Excellence: ADynamics - Your Gateway to Certified Pilot Training.
+            </h1>
+            <p class="mb-5">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+              Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
+              sed stet lorem sit clita duo justo magna dolore erat amet
+            </p>
+            <div class="row gy-5 gx-4">
+              <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.1s">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="flex-shrink-0 btn-square bg-primary me-3 border-r8">
+                    <i class="fa fa-check text-white"></i>
+                  </div>
+                  <h5 class="mb-0">Fully Licensed</h5>
                 </div>
+                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam
+                  eos</span>
               </div>
+              <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.2s">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="flex-shrink-0 btn-square bg-primary me-3 border-r8">
+                    <i class="fa fa-check text-white"></i>
+                  </div>
+                  <h5 class="mb-0">Online Tracking</h5>
+                </div>
+                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam
+                  eos</span>
+              </div>
+              <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.3s">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="flex-shrink-0 btn-square bg-primary me-3 border-r8">
+                    <i class="fa fa-check text-white"></i>
+                  </div>
+                  <h5 class="mb-0">Afordable Fee</h5>
+                </div>
+                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam
+                  eos</span>
+              </div>
+              <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.4s">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="flex-shrink-0 btn-square bg-primary me-3 border-r8">
+                    <i class="fa fa-check text-white"></i>
+                  </div>
+                  <h5 class="mb-0">Best Trainers</h5>
+                </div>
+                <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam
+                  eos</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 wow d-none d-lg-flex fadeInUp" data-wow-delay="0.5s">
+            <div
+              class="position-relative overflow-hidden h-100 border-r10 d-none d-lg-flex w-100 mt-5 features-side-imgSection">
+              <img src="./img/pilots.jpg" alt="" class="features-side-img" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Courses End -->
+  </section>
+  <!-- Features End -->
 
-    <!-- Features Start -->
-
-    <section class="Features">
-      <div class="container-xxl py-6">
-        <div class="container">
-          <div class="row g-5">
-            <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-primary text-uppercase mb-2">Why Choose Us!</h6>
-              <h1 class="display-6 mb-4">
-                Flight to Excellence: ADynamics - Your Gateway to Certified Pilot Training.
-              </h1>
-              <p class="mb-5">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
-              </p>
-              <div class="row gy-5 gx-4">
-                <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.1s">
-                  <div class="d-flex align-items-center mb-3">
-                    <div
-                      class="flex-shrink-0 btn-square bg-primary me-3 border-r8"
-                    >
-                      <i class="fa fa-check text-white"></i>
-                    </div>
-                    <h5 class="mb-0">Fully Licensed</h5>
-                  </div>
-                  <span
-                    >Magna sea eos sit dolor, ipsum amet ipsum lorem diam
-                    eos</span
-                  >
-                </div>
-                <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.2s">
-                  <div class="d-flex align-items-center mb-3">
-                    <div
-                      class="flex-shrink-0 btn-square bg-primary me-3 border-r8"
-                    >
-                      <i class="fa fa-check text-white"></i>
-                    </div>
-                    <h5 class="mb-0">Online Tracking</h5>
-                  </div>
-                  <span
-                    >Magna sea eos sit dolor, ipsum amet ipsum lorem diam
-                    eos</span
-                  >
-                </div>
-                <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.3s">
-                  <div class="d-flex align-items-center mb-3">
-                    <div
-                      class="flex-shrink-0 btn-square bg-primary me-3 border-r8"
-                    >
-                      <i class="fa fa-check text-white"></i>
-                    </div>
-                    <h5 class="mb-0">Afordable Fee</h5>
-                  </div>
-                  <span
-                    >Magna sea eos sit dolor, ipsum amet ipsum lorem diam
-                    eos</span
-                  >
-                </div>
-                <div class="col-sm-6 wow fadeIn px-2" data-wow-delay="0.4s">
-                  <div class="d-flex align-items-center mb-3">
-                    <div
-                      class="flex-shrink-0 btn-square bg-primary me-3 border-r8"
-                    >
-                      <i class="fa fa-check text-white"></i>
-                    </div>
-                    <h5 class="mb-0">Best Trainers</h5>
-                  </div>
-                  <span
-                    >Magna sea eos sit dolor, ipsum amet ipsum lorem diam
-                    eos</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 wow d-none d-lg-flex fadeInUp"
-              data-wow-delay="0.5s"
-            >
-              <div
-                class="position-relative overflow-hidden h-100 border-r10 d-none d-lg-flex w-100 mt-5 features-side-imgSection"
-              >
-                <img src="./img/pilots.jpg" alt="" class="features-side-img" />
-              </div>
-            </div>
-          </div>
+  <!-- demo-class start -->
+  <section class="demo-class-section imSection-bg">
+    <div class="container-xxl py-6 px-lg-5">
+      <div class="demo-class-card mx-auto flex flex-column flex-xl-row border-r8 py-3 py-xl-4 arc-shadow">
+        <div class="demo-class-textarea text-xl-start text-center px-3 px-sm-4 px-sm-5 py-3">
+          <h2 class="fs-2 display-6 py-4 pb-3">
+            Experience ADynamics' Demo Class – Your Gateway to Pilot Training Excellence!
+          </h2>
+          <p class="mb-5 mb-md-4">
+            Take the test now to assess your language skills and determine the
+            best starting point for your English learning journey.
+          </p>
+          <button class="demo-class-joinBtn btn mb-5 fs-6 px-4 py-3 border-r8">
+            Join Our Demo class
+          </button>
         </div>
-      </div>
-    </section>
-    <!-- Features End -->
-
-    <!-- demo-class start -->
-    <section class="demo-class-section imSection-bg">
-      <div class="container-xxl py-6 px-lg-5">
-        <div
-          class="demo-class-card mx-auto flex flex-column flex-xl-row border-r8 py-3 py-xl-4 arc-shadow"
-        >
-          <div
-            class="demo-class-textarea text-xl-start text-center px-3 px-sm-4 px-sm-5 py-3"
-          >
-            <h2 class="fs-2 display-6 py-4 pb-3">
-              Experience ADynamics' Demo Class – Your Gateway to Pilot Training Excellence!
-            </h2>
-            <p class="mb-5 mb-md-4">
-              Take the test now to assess your language skills and determine the
-              best starting point for your English learning journey.
-            </p>
-            <button
-              class="demo-class-joinBtn btn mb-5 fs-6 px-4 py-3 border-r8"
-            >
-              Join Our Demo class
-            </button>
-          </div>
-          <div
-            class="demo-class-imgarea d-flex justify-content-center py-4 pt-0 py-xl-0"
-          >
-            <div
-              class="d-flex justify-content-center justify-content-xl-start demo-class-imgWrapper"
-            >
-              <img
-                loading="lazy"
-                decoding="async"
-                width="799"
-                height="449"
-                src="https://englishmithra.com/wp-content/uploads/2023/06/gallery2.jpg"
-                class="demo-class-videoImg"
-                alt=""
-                srcset="
+        <div class="demo-class-imgarea d-flex justify-content-center py-4 pt-0 py-xl-0">
+          <div class="d-flex justify-content-center justify-content-xl-start demo-class-imgWrapper">
+            <img loading="lazy" decoding="async" width="799" height="449"
+              src="https://englishmithra.com/wp-content/uploads/2023/06/gallery2.jpg" class="demo-class-videoImg" alt=""
+              srcset="
                   https://englishmithra.com/wp-content/uploads/2023/06/gallery2.jpg         799w,
                   https://englishmithra.com/wp-content/uploads/2023/06/gallery2-300x169.jpg 300w,
                   https://englishmithra.com/wp-content/uploads/2023/06/gallery2-768x432.jpg 768w
-                "
-                sizes="(max-width: 799px) 100vw, 799px"
-              />
-              <a href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="50"
-                  height="50"
-                  viewBox="0 0 50 50"
-                >
-                  <g
-                    id="Group_205"
-                    data-name="Group 205"
-                    transform="translate(-1462 -4918)"
-                  >
-                    <circle
-                      id="Ellipse_12"
-                      data-name="Ellipse 12"
-                      cx="25"
-                      cy="25"
-                      r="25"
-                      transform="translate(1462 4918)"
-                      fill="#fff"
-                    ></circle>
-                    <path
-                      id="play-svgrepo-com"
-                      d="M8.286,3.407A1.5,1.5,0,0,0,6,4.684V19.316a1.5,1.5,0,0,0,2.286,1.277l11.888-7.316a1.5,1.5,0,0,0,0-2.555Z"
-                      transform="translate(1475.556 4931)"
-                      fill="#49aaaa"
-                    ></path>
-                  </g>
-                </svg>
-              </a>
-            </div>
+                " sizes="(max-width: 799px) 100vw, 799px" />
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                <g id="Group_205" data-name="Group 205" transform="translate(-1462 -4918)">
+                  <circle id="Ellipse_12" data-name="Ellipse 12" cx="25" cy="25" r="25" transform="translate(1462 4918)"
+                    fill="#fff"></circle>
+                  <path id="play-svgrepo-com"
+                    d="M8.286,3.407A1.5,1.5,0,0,0,6,4.684V19.316a1.5,1.5,0,0,0,2.286,1.277l11.888-7.316a1.5,1.5,0,0,0,0-2.555Z"
+                    transform="translate(1475.556 4931)" fill="#49aaaa"></path>
+                </g>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-    </section>
-    <!-- demo-class end -->
+    </div>
+  </section>
+  <!-- demo-class end -->
 
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-6">
-      <div class="container">
-        <div
-          class="text-center mx-auto mb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 500px"
-        >
-          <h6 class="text-primary text-uppercase mb-2">Testimonial</h6>
-          <h1 class="display-6 mb-4">What Our Students Say!</h1>
-        </div>
-        <div class="row justify-content-center testimonia-bg py-5">
-          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="owl-carousel testimonial-carousel">
-              <div class="testimonial-item text-center">
-                <div class="position-relative mb-5">
-                  <img
-                    class="img-fluid rounded-circle mx-auto"
-                    src="img/testimonial-1.jpg"
-                    alt=""
-                  />
-                  <div
-                    class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                    style="width: 60px; height: 60px"
-                  >
-                    <i class="fa fa-quote-left fa-2x text-primary"></i>
-                  </div>
+  <!-- Testimonial Start -->
+  <div class="container-xxl py-6">
+    <div class="container">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
+        <h6 class="text-primary text-uppercase mb-2">Testimonial</h6>
+        <h1 class="display-6 mb-4">What Our Students Say!</h1>
+      </div>
+      <div class="row justify-content-center testimonia-bg py-5">
+        <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item text-center">
+              <div class="position-relative mb-5">
+                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-1.jpg" alt="" />
+                <div
+                  class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
+                  style="width: 60px; height: 60px">
+                  <i class="fa fa-quote-left fa-2x text-primary"></i>
                 </div>
-                <p class="fs-4">
-                  Dolores sed duo clita tempor justo dolor et stet lorem kasd
-                  labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
-                  et labore et tempor diam tempor erat.
-                </p>
-                <hr class="w-25 mx-auto" />
-                <h5>Client Name</h5>
-                <span>Profession</span>
               </div>
-              <div class="testimonial-item text-center">
-                <div class="position-relative mb-5">
-                  <img
-                    class="img-fluid rounded-circle mx-auto"
-                    src="img/testimonial-2.jpg"
-                    alt=""
-                  />
-                  <div
-                    class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                    style="width: 60px; height: 60px"
-                  >
-                    <i class="fa fa-quote-left fa-2x text-primary"></i>
-                  </div>
+              <p class="fs-4">
+                Dolores sed duo clita tempor justo dolor et stet lorem kasd
+                labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
+                et labore et tempor diam tempor erat.
+              </p>
+              <hr class="w-25 mx-auto" />
+              <h5>Client Name</h5>
+              <span>Profession</span>
+            </div>
+            <div class="testimonial-item text-center">
+              <div class="position-relative mb-5">
+                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-2.jpg" alt="" />
+                <div
+                  class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
+                  style="width: 60px; height: 60px">
+                  <i class="fa fa-quote-left fa-2x text-primary"></i>
                 </div>
-                <p class="fs-4">
-                  Dolores sed duo clita tempor justo dolor et stet lorem kasd
-                  labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
-                  et labore et tempor diam tempor erat.
-                </p>
-                <hr class="w-25 mx-auto" />
-                <h5>Client Name</h5>
-                <span>Profession</span>
               </div>
-              <div class="testimonial-item text-center">
-                <div class="position-relative mb-5">
-                  <img
-                    class="img-fluid rounded-circle mx-auto"
-                    src="img/testimonial-3.jpg"
-                    alt=""
-                  />
-                  <div
-                    class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
-                    style="width: 60px; height: 60px"
-                  >
-                    <i class="fa fa-quote-left fa-2x text-primary"></i>
-                  </div>
+              <p class="fs-4">
+                Dolores sed duo clita tempor justo dolor et stet lorem kasd
+                labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
+                et labore et tempor diam tempor erat.
+              </p>
+              <hr class="w-25 mx-auto" />
+              <h5>Client Name</h5>
+              <span>Profession</span>
+            </div>
+            <div class="testimonial-item text-center">
+              <div class="position-relative mb-5">
+                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-3.jpg" alt="" />
+                <div
+                  class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle"
+                  style="width: 60px; height: 60px">
+                  <i class="fa fa-quote-left fa-2x text-primary"></i>
                 </div>
-                <p class="fs-4">
-                  Dolores sed duo clita tempor justo dolor et stet lorem kasd
-                  labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
-                  et labore et tempor diam tempor erat.
-                </p>
-                <hr class="w-25 mx-auto" />
-                <h5>Client Name</h5>
-                <span>Profession</span>
               </div>
+              <p class="fs-4">
+                Dolores sed duo clita tempor justo dolor et stet lorem kasd
+                labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
+                et labore et tempor diam tempor erat.
+              </p>
+              <hr class="w-25 mx-auto" />
+              <h5>Client Name</h5>
+              <span>Profession</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Testimonial End -->
+  </div>
+  <!-- Testimonial End -->
 
-    <!-- Team Start-->
-    <div class="container-xxl pt-5 py-6 pt-lg-6">
-      <div class="container">
-        <div
-          class="text-center mx-auto mb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 500px"
-        >
-          <h6 class="text-primary text-uppercase mb-2">Meet The Team</h6>
-          <h1 class="display-6 mb-4">We Have Great Experience Of Driving</h1>
-        </div>
-        <div
-          class="row g-0 team-items d-flex justify-content-center d-none d-md-flex"
-        >
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="team-item position-relative mx-1" >
-             
-                <img
-                  class="img-fluid w-50 team-item-img"
-                  src="img/team-1.jpg"
-                 style="margin-left: auto;margin-right: auto; "
-                  alt=""
-                />
-        
-              
-              <div class="text-center p-4 pt-2">
-                <h5 class="mt-2">Full Name</h5>
-                <span>software test engineer</span>
-              </div>
+  <!-- Team Start-->
+  <div class="container-xxl pt-5 py-6 pt-lg-6">
+    <div class="container">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
+        <h6 class="text-primary text-uppercase mb-2">Meet The Team</h6>
+        <h1 class="display-6 mb-4">We Have Great Experience Of Driving</h1>
+      </div>
+      <div class="row g-0 team-items d-flex justify-content-center d-none d-md-flex">
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="team-item position-relative mx-1">
+
+            <img class="img-fluid w-50 team-item-img" src="img/team-1.jpg"
+              style="margin-left: auto;margin-right: auto; " alt="" />
+
+
+            <div class="text-center p-4 pt-2">
+              <h5 class="mt-2">Full Name</h5>
+              <span>software test engineer</span>
             </div>
           </div>
+        </div>
 
 
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="team-item position-relative mx-1">
-             
-                <img
-                  class="img-fluid w-50 team-item-img"
-                  src="img/team-2.jpg"
-                  style="margin-left: auto;margin-right: auto; "
-                  alt=""
-                />
-                <!-- <div class="team-social text-center">
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="team-item position-relative mx-1">
+
+            <img class="img-fluid w-50 team-item-img" src="img/team-2.jpg"
+              style="margin-left: auto;margin-right: auto; " alt="" />
+            <!-- <div class="team-social text-center">
                   <a
                     class="btn btn-square btn-outline-primary border-2 m-1"
                     href=""
@@ -1156,307 +1030,224 @@
                     ><i class="fab fa-instagram"></i
                   ></a>
                 </div> -->
-            
-              <div class="text-center p-4 pt-2">
-                <h5 class="mt-2">Full Name</h5>
-                <span>software test engineer</span>
-              </div>
-            </div>
-          </div>
 
-
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="team-item position-relative mx-1">
-              
-                <img
-                  class="img-fluid w-50 team-item-img"
-                  src="img/team-3.jpg"
-                  style="margin-left: auto;margin-right: auto; "
-                  alt=""
-                />
-             
-          
-              <div class="text-center p-4 pt-2">
-                <h5 class="mt-2">Full Name</h5>
-                <span>software test engineer</span>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="team-item position-relative mx-1">
-              
-                <img
-                  class="img-fluid w-50 team-item-img"
-                  src="img/team-4.jpg"
-                  style="margin-left: auto;margin-right: auto";
-                  alt=""
-                />
-               
-              <div class="text-center p-4 pt-2">
-                <h5 class="mt-2">Full Name</h5>
-                <span>software test engineer</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-        <!-- Team Testimonial Start mobile-->
-        <div class="row justify-content-center d-md-none">
-          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="owl-carousel testimonial-carousel">
-              <div class="testimonial-item text-center">
-                <div class="position-relative mb-4 team-item-carousel">
-                  <img
-                    class="img-fluid mx-auto team-item-img"
-                    src="img/team-1.jpg"
-                    alt=""
-                  />
-                  <div class="team-social text-center">
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-twitter"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                  </div>
-                </div>
-
-                <h5>Client Name</h5>
-                <span>Profession</span>
-              </div>
-              <div class="testimonial-item text-center">
-                <div class="position-relative mb-4 team-item-carousel">
-                  <img
-                    class="img-fluid mx-auto team-item-img"
-                    src="img/team-2.jpg"
-                    alt=""
-                  />
-                  <div class="team-social text-center">
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-twitter"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                  </div>
-                </div>
-
-                <h5>Client Name</h5>
-                <span>Profession</span>
-              </div>
-              <div class="testimonial-item text-center">
-                <div class="position-relative mb-4 team-item-carousel">
-                  <img
-                    class="img-fluid mx-auto team-item-img"
-                    src="img/team-3.jpg"
-                    alt=""
-                  />
-                  <div class="team-social text-center">
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-twitter"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                  </div>
-                </div>
-
-                <h5>Client Name</h5>
-                <span>Profession</span>
-              </div>
-              <div class="testimonial-item text-center">
-                <div class="position-relative mb-4 team-item-carousel">
-                  <img
-                    class="img-fluid mx-auto team-item-img"
-                    src="img/team-4.jpg"
-                    alt=""
-                  />
-                  <div class="team-social text-center">
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-twitter"></i
-                    ></a>
-                    <a
-                      class="btn btn-square btn-outline-primary border-2 m-1"
-                      href=""
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                  </div>
-                </div>
-
-                <h5>Client Name</h5>
-                <span>Profession</span>
-              </div>
+            <div class="text-center p-4 pt-2">
+              <h5 class="mt-2">Full Name</h5>
+              <span>software test engineer</span>
             </div>
           </div>
         </div>
-        <!-- Team Testimonial End -->
+
+
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="team-item position-relative mx-1">
+
+            <img class="img-fluid w-50 team-item-img" src="img/team-3.jpg"
+              style="margin-left: auto;margin-right: auto; " alt="" />
+
+
+            <div class="text-center p-4 pt-2">
+              <h5 class="mt-2">Full Name</h5>
+              <span>software test engineer</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="team-item position-relative mx-1">
+
+            <img class="img-fluid w-50 team-item-img" src="img/team-4.jpg" style="margin-left: auto;margin-right: auto"
+              ; alt="" />
+
+            <div class="text-center p-4 pt-2">
+              <h5 class="mt-2">Full Name</h5>
+              <span>software test engineer</span>
+            </div>
+          </div>
+        </div>
+
+
       </div>
-    </div>
-    <!-- Team  End -->
-
-    <!-- Footer Start -->
-    <div
-      class="container-fluid bg-dark text-light footer my-6 mb-0 py-6 mt-4 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-white mb-4">Get In Touch</h4>
-
-            <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+012 345 67890
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>info@example.com
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-light mb-4">Quick Links</h4>
-            <a class="btn btn-link" href="">About Us</a>
-            <a class="btn btn-link" href="">Contact Us</a>
-            <a class="btn btn-link" href="">Our Services</a>
-            <a class="btn btn-link" href="">Terms & Condition</a>
-            <a class="btn btn-link" href="">Support</a>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-light mb-4">Popular Links</h4>
-            <a class="btn btn-link" href="">About Us</a>
-            <a class="btn btn-link" href="">Contact Us</a>
-            <a class="btn btn-link" href="">Our Services</a>
-            <a class="btn btn-link" href="">Terms & Condition</a>
-            <a class="btn btn-link" href="">Support</a>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-light mb-4">Newsletter</h4>
-            <form action="">
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control p-3 border-0"
-                  placeholder="Your Email Address"
-                />
-                <button class="btn btn-primary">Sign Up</button>
+      <!-- Team Testimonial Start mobile-->
+      <div class="row justify-content-center d-md-none">
+        <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item text-center">
+              <div class="position-relative mb-4 team-item-carousel">
+                <img class="img-fluid mx-auto team-item-img" src="img/team-1.jpg" alt="" />
+                <div class="team-social text-center">
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-instagram"></i></a>
+                </div>
               </div>
-            </form>
-            <h6 class="text-white mt-4 mb-3">Follow Us</h6>
-            <div class="d-flex pt-2">
-              <a class="btn btn-square btn-outline-light me-1" href=""
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a class="btn btn-square btn-outline-light me-1" href=""
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a class="btn btn-square btn-outline-light me-1" href=""
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a class="btn btn-square btn-outline-light me-0" href=""
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
+
+              <h5>Client Name</h5>
+              <span>Profession</span>
+            </div>
+            <div class="testimonial-item text-center">
+              <div class="position-relative mb-4 team-item-carousel">
+                <img class="img-fluid mx-auto team-item-img" src="img/team-2.jpg" alt="" />
+                <div class="team-social text-center">
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+
+              <h5>Client Name</h5>
+              <span>Profession</span>
+            </div>
+            <div class="testimonial-item text-center">
+              <div class="position-relative mb-4 team-item-carousel">
+                <img class="img-fluid mx-auto team-item-img" src="img/team-3.jpg" alt="" />
+                <div class="team-social text-center">
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+
+              <h5>Client Name</h5>
+              <span>Profession</span>
+            </div>
+            <div class="testimonial-item text-center">
+              <div class="position-relative mb-4 team-item-carousel">
+                <img class="img-fluid mx-auto team-item-img" src="img/team-4.jpg" alt="" />
+                <div class="team-social text-center">
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                      class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+
+              <h5>Client Name</h5>
+              <span>Profession</span>
             </div>
           </div>
         </div>
       </div>
+      <!-- Team Testimonial End -->
     </div>
-    <!-- Footer End -->
+  </div>
+  <!-- Team  End -->
 
-    <!-- Copyright Start -->
-    <div
-      class="container-fluid copyright text-light py-4 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark text-light footer my-6 mb-0 py-6 mt-4 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-4">Get In Touch</h4>
+
+          <p class="mb-2">
+            <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-envelope me-3"></i>info@example.com
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-light mb-4">Quick Links</h4>
+          <a class="btn btn-link" href="">About Us</a>
+          <a class="btn btn-link" href="">Contact Us</a>
+          <a class="btn btn-link" href="">Our Services</a>
+          <a class="btn btn-link" href="">Terms & Condition</a>
+          <a class="btn btn-link" href="">Support</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-light mb-4">Popular Links</h4>
+          <a class="btn btn-link" href="">About Us</a>
+          <a class="btn btn-link" href="">Contact Us</a>
+          <a class="btn btn-link" href="">Our Services</a>
+          <a class="btn btn-link" href="">Terms & Condition</a>
+          <a class="btn btn-link" href="">Support</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-light mb-4">Newsletter</h4>
+          <form action="">
+            <div class="input-group">
+              <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address" />
+              <button class="btn btn-primary">Sign Up</button>
+            </div>
+          </form>
+          <h6 class="text-white mt-4 mb-3">Follow Us</h6>
+          <div class="d-flex pt-2">
+            <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-square btn-outline-light me-0" href=""><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
     </div>
-    <!-- Copyright End -->
+  </div>
+  <!-- Footer End -->
 
-    <!-- Back to Top -->
-    <a href="" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-whatsapp"></i
-    ></a>
+  <!-- Copyright Start -->
+  <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright End -->
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <!-- Back to Top -->
+  <a href="" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-whatsapp"></i></a>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyCfZk_0AxdJ4lWpyMDL7wdS_wfG8Zx1msA",
-        authDomain: "adynam1cs.firebaseapp.com",
-        projectId: "adynam1cs",
-        storageBucket: "adynam1cs.appspot.com",
-        messagingSenderId: "110532554959",
-        appId: "1:110532554959:web:7a463cd5040c609cf7c7ba",
-        measurementId: "G-RLNZGVK3C0"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  </body>
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCfZk_0AxdJ4lWpyMDL7wdS_wfG8Zx1msA",
+      authDomain: "adynam1cs.firebaseapp.com",
+      projectId: "adynam1cs",
+      storageBucket: "adynam1cs.appspot.com",
+      messagingSenderId: "110532554959",
+      appId: "1:110532554959:web:7a463cd5040c609cf7c7ba",
+      measurementId: "G-RLNZGVK3C0"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+</body>
+
 </html>
