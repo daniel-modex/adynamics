@@ -50,6 +50,7 @@
       /* background-image: url('https://media.istockphoto.com/id/486037941/photo/canada-flag.jpg?s=1024x1024&w=is&k=20&c=ftOCzZMot-MWyk8s_DI2s3JYjVwMpuGDq1BFjY8blL4='); Replace 'your-image-url.jpg' with the URL of your image */
       background-size: cover;
       background-position: center;
+      transition: transform 0.4s ease-in-out;
       border: 1px solid #ccc;
       overflow: hidden;
       /* Ensure overflow is hidden to prevent content overflow */
@@ -66,12 +67,22 @@
       /* Initial opacity, 0.5 means 50% opacity */
       transition: opacity 0.3s ease;
       /* Smooth transition */
+      
+    }
+
+    ::-webkit-scrollbar {
+    display: none;
+}
+
+    #scard:hover{
+      transform: scale(1.045);
     }
 
     #scard:hover::before {
       opacity: 1;
       /* Opacity becomes 1 on hover */
       background-color: rgba(255, 255, 255, 0.2);
+      
     }
 
     #stext {
